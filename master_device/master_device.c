@@ -175,6 +175,7 @@ static long master_ioctl(struct file *file, unsigned int ioctl_num, unsigned lon
 			ret = 0;
 			break;
 		case master_IOCTL_MMAP:
+			// do nothing
 			break;
 		case master_IOCTL_EXIT:
 			if(kclose(sockfd_cli) == -1)
