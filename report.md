@@ -14,7 +14,7 @@ The slave do not know the size of the file in advance, so we just use a fixed si
 
 ## Result
 
-
+![](time.png)
 
 ## Performance
 
