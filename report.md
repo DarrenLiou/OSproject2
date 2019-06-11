@@ -32,3 +32,9 @@ mmap is better when the file is large, normal file I/O is better when the file i
 
 ## Work List
 
+b06902008: slave.c, compile, test
+b06902014: report.md, compile, test
+b06902031: slave.c, compile, test
+b06902040: slave.c, compile, test
+b06902124: master.c, compile, test
+p06922005: shell scripts, compile, test
