@@ -14,7 +14,7 @@ The slave do not know the size of the file in advance, so we just use a fixed si
 
 ## Result
 
-
+![](time.png)
 
 ## Performance
 
@@ -31,3 +31,4 @@ So mmap should be used when we need to random access the file which is large.
 mmap is better when the file is large, normal file I/O is better when the file is small.
 
 ## Work List
+
