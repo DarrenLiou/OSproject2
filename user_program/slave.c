@@ -39,7 +39,6 @@ int main (int argc, char* argv[])
 	}
 	gettimeofday(&start ,NULL);
 	if( (file_fd = open (file_name, O_RDWR | O_CREAT | O_TRUNC)) < 0)
-	//if( (file_fd = open (file_name, O_RDWR | O_CREAT | O_TRUNC,(mode_t)0600)) < 0)
 	{
 		perror("failed to open input file\n");
 		return 1;
@@ -50,10 +49,8 @@ int main (int argc, char* argv[])
 		perror("ioclt create slave socket error\n");
 		return 1;
 	}
-// we can comment this line
     write(1, "ioctl success\n", 14);
 
-	//size_t page_size = 0;
 	switch(method[0])
 	{
 		case 'f'://fcntl : read()/write()
@@ -70,7 +67,6 @@ int main (int argc, char* argv[])
                 if((ll)PAGE_SIZE-(ll)ret-(ll)data_size <0 ||data_size==-1){
                     if(data_size !=-1){
                         remain = PAGE_SIZE - data_size;
-			//page_size += PAGE_SIZE;
                         pagenum++;
                         for(size_t i=0; i<remain; i++){
                             mmapaddr[data_size+i] = buf[i];
@@ -85,7 +81,6 @@ int main (int argc, char* argv[])
                     if(write(file_fd,"",1)==-1)
                         perror("failed when write to end!");
                     mmapaddr = (char*)mmap(NULL, PAGE_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED,file_fd,pagenum*PAGE_SIZE);
-                    //mmapaddr = mmap(NULL, PAGE_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED,file_fd,page_size);
                     if(mmapaddr==MAP_FAILED)
                         perror("mmap failed!");
                     data_size = 0;
