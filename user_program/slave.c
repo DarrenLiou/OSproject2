@@ -101,6 +101,7 @@ int main (int argc, char* argv[])
 
 
 	}
+//	ioctl(dev_fd, 123456);
 
 
 
